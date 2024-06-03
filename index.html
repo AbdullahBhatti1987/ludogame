@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ludo</title>
+</head>
+
+<body>
+  <div class="game">
+    <button onclick="newgame()">Reset</button>
+    <button onclick="userSelect()">Users</button>
+  </div>
+
+<div class="dies1">
+    <i id="one1" class="fa-solid fa-dice-one"></i>
+    <i id="two1" class="fa-solid fa-dice-two"></i>
+    <i id="three1" class="fa-solid fa-dice-three"></i>
+    <i id="four1" class="fa-solid fa-dice-four"></i>
+    <i id="five1" class="fa-solid fa-dice-five"></i>
+    <i id="six1" class="fa-solid fa-dice-six"></i>
+</div>
+<div class="dies2">
+    <i id="one2" class="fa-solid fa-dice-one"></i>
+    <i id="two2" class="fa-solid fa-dice-two"></i>
+    <i id="three2" class="fa-solid fa-dice-three"></i>
+    <i id="four2" class="fa-solid fa-dice-four"></i>
+    <i id="five2" class="fa-solid fa-dice-five"></i>
+    <i id="six2" class="fa-solid fa-dice-six"></i>
+</div>
+    
+    <div class="yellow">
+        <button id="ybutton" onclick="yellowturn()">Yellow</button>
+    </div>
+    <div class="blue">
+        <button id="ybutton" onclick="blueturn()">Blue</button>
+    </div>
+    <div class="green">
+        <button id="gbutton" onclick="greenturn()">Green</button>
+    </div>
+    <div class="red">
+        <button id="rbutton" onclick="redturn()">Red</button>
+    </div>
+    <table>
+        <tr>
+            <td colspan="6" rowspan="6">
+                <div class="bigbox bcolor-yellow">
+                    <div id="yc1" class="circle bgyellow"><span id="yp1" class="piece bgyellow"></span></div>
+                    <div id="yc2" class="circle bgyellow"><span id="yp2" class="piece bgyellow"></span></div>
+                    <div id="yc3" class="circle bgyellow"><span id="yp3" class="piece bgyellow"></span></div>
+                    <div id="yc4" class="circle bgyellow"><span id="yp4" class="piece bgyellow"></span></div>
+                </div>
+            </td>
+            <td id="y10"></td>
+            <td id="y11"><i class="fa-solid fa-arrow-down fgreen"></i></td>
+            <td id="y12"></td>
+            <td colspan="6" rowspan="6">
+                <div class="bigbox bcolor-green">
+                    <div id="gc1" class="circle bggreen"><span id="gp1" class="piece bggreen"></span></div>
+                    <div id="gc2" class="circle bggreen"><span id="gp2" class="piece bggreen"></span></div>
+                    <div id="gc3" class="circle bggreen"><span id="gp3" class="piece bggreen"></span></div>
+                    <div id="gc4" class="circle bggreen"><span id="gp4" class="piece bggreen"></span></div>
+
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td id="y9"></td>
+            <td id="g13" Class="bggreen"></td>
+            <td id="g0" class="bggreen"></td>
+        </tr>
+        <tr>
+            <td id="y8" class="bgyellow"></td>
+            <td id="g14" Class="bggreen"></td>
+            <td id="g1"></td>
+        </tr>
+        <tr>
+            <td id="y7" ></td>
+            <td id="g15" Class="bggreen"></td>
+            <td id="g2"></td>
+        </tr>
+        <tr>
+            <td id="y6"></td>
+            <td id="g16" Class="bggreen"></td>
+            <td id="g3"></td>
+        </tr>
+        <tr>
+            <td id="y5"></td>
+            <td id="g17" Class="bggreen"></td>
+            <td id="g4"></td>
+        </tr>
+        <tr>
+            <td id="b12"></td>
+            <td id="y0" class="bgyellow"></td>
+            <td id="y1"></td>
+            <td id="y2"></td>
+            <td id="y3"></td>
+            <td id="y4"></td>
+            <td colspan="3" rowspan="3" id="bordernone">
+                <div id="center"></div>
+            </td>
+            <td id="g5"></td>
+            <td id="g6"></td>
+            <td id="g7"></td>
+            <td id="g8" class="bggreen"></td>
+            <td id="g9"></td>
+            <td id="g10"></td>
+        </tr>
+        <tr>
+            <td id="b11"><i class="fa-solid fa-arrow-right fyellow"></i></td>
+            <td id="y13" Class="bgyellow"></td>
+            <td id="y14" Class="bgyellow"></td>
+            <td id="y15" Class="bgyellow"></td>
+            <td id="y16" Class="bgyellow"></td>
+            <td id="y17" Class="bgyellow"></td>
+            <td id="r17" Class="bgred"></td>
+            <td id="r16" Class="bgred"></td>
+            <td id="r15" Class="bgred"></td>
+            <td id="r14" Class="bgred"></td>
+            <td id="r13" Class="bgred"></td>
+            <td id="g11"><i class="fa-solid fa-arrow-left fred"></i></td>
+        </tr>
+        <tr>
+            <td id="b10"></td>
+            <td id="b9"></td>
+            <td id="b8" Class="bgblue"></td>
+            <td id="b7"></td>
+            <td id="b6"></td>
+            <td id="b5"></td>
+            <td id="r4"></td>
+            <td id="r3"></td>
+            <td id="r2"></td>
+            <td id="r1"></td>
+            <td id="r0" Class="bgred"></td>
+            <td id="g12"></td>
+        </tr>
+        <tr>
+            <td colspan="6" rowspan="6">
+                <div class="bigbox bcolor-blue">
+
+
+                    <div id="bc1" class="circle bgblue"><span id="bp1" class="piece bgblue"></span></div>
+                    <div id="bc2" class="circle bgblue"><span id="bp2" class="piece bgblue"></span></div>
+                    <div id="bc3" class="circle bgblue"><span id="bp3" class="piece bgblue"></span></div>
+                    <div id="bc4" class="circle bgblue"><span id="bp4" class="piece bgblue"></span></div>
+                </div>
+            </td>
+            <td id="b4"></td>
+            <td id="b17" Class="bgblue"></td>
+            <td id="r5"></td>
+            <td colspan="6" rowspan="6">
+                <div class="bigbox bcolor-red">
+                    <div class="circle bgred"><span id="rp1" class="piece bgred"></span></div>
+                    <div class="circle bgred"><span id="rp2" class="piece bgred"></span></div>
+                    <div class="circle bgred"><span id="rp3" class="piece bgred"></span></div>
+                    <div class="circle bgred"><span id="rp4" class="piece bgred"></span></div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td id="b3"></td>
+            <td id="b16" Class="bgblue"></td>
+            <td id="r6"></td>
+        </tr>
+        <tr>
+            <td id="b2"></td>
+            <td id="b15" Class="bgblue"></td>
+            <td id="r7"></td>
+        </tr>
+        <tr>
+            <td id="b1"></td>
+            <td id="b14" Class="bgblue"></td>
+            <td id="r8" Class="bgred"></td>
+        </tr>
+        <tr>
+            <td id="b0" Class="bgblue"></td>
+            <td id="b13" Class="bgblue"></td>
+            <td id="r9"></td>
+        </tr>
+        <tr>
+            <td id="r12"></td>
+            <td id="r11"><i class="fa-solid fa-arrow-up fblue"></i></td>
+            <td id="r10"></td>
+        </tr>
+    </table>
+    <script src="https://kit.fontawesome.com/670d8593df.js" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
